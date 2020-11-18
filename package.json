@@ -1,0 +1,27 @@
+{
+  "name": "directed-study",
+  "version": "1.0.0",
+  "description": "A web application that allows co-workers to informally chat",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eathnma/Directed-Study.git"
+  },
+  "keywords": [
+    "socket",
+    "p5.js",
+    "node"
+  ],
+  "author": "IAT 2000",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eathnma/Directed-Study/issues"
+  },
+  "homepage": "https://github.com/eathnma/Directed-Study#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
