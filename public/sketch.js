@@ -1,3 +1,5 @@
+var socket;
+
 function setup() {
   createCanvas(400, 400);
 }
