@@ -2,7 +2,7 @@
   "name": "directed-study",
   "version": "1.0.0",
   "description": "A web application that allows co-workers to informally chat",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
