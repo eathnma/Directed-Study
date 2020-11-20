@@ -1,3 +1,6 @@
+
+require([""])
+
 // import express, store into var
 var app = require('express')();
 var http = require('http').createServer(app);
@@ -18,6 +21,7 @@ io.on('connection', (socket) => {
 http.listen(2000,() =>{
     console.log('listening on *:2000');
 });
+
 
 // // create new express object
 // var server = express();
