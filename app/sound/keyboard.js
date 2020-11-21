@@ -16,6 +16,8 @@ function playSynth() {
     synth.triggerAttackRelease("C3", "7n");
 }
 
+window.addEventListener('click');
+
 //tracks keys
 function logKey (key) {
     console.log("Key pressed is: "+ key);
@@ -26,6 +28,14 @@ function logKey (key) {
     keyPrintElement.insertAdjacentHTML('beforeend',key);
     playSynth();
     
+}
+
+// for when we need to load items 
+try{
+
+}
+catch(err){
+
 }
 
 
