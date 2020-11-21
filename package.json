@@ -24,10 +24,8 @@
   "homepage": "https://github.com/eathnma/Directed-Study#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "paper": "^0.12.11",
     "socket.io": "^3.0.2",
     "tone": "^14.7.58"
-  },
-  "devDependencies": {
-    "typescript": "^4.0.5"
   }
 }
