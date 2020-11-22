@@ -2,16 +2,36 @@
 <html>
   <head>
     <title>Keyboard</title>
+     <!-- import paper.js-->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.11/paper-full.min.js"></script>
+     <script type="text/javascript">
+        window.onload = function() {
+          var canvas = documentElementById("myCanvas");
+          paper.setup(canvas);
+          var path = new paper.Path();
+
+          path.strokeColor = 'black';
+          var start = new paper.Point(100,100);
+
+          path.moveTo(start);
+
+          path.lineTo(start.add([200,-50]));
+
+          paper.view.draw();
+        }
+    </script>
   </head>
 
   <!-- on load, run keystroke listeners -->
   <body onload="setMyKeyDownListener()">
+    <canvas id="myCanvas"></canvas>
     <p id="keyPrint"></p>
 
     <button onclick="clickButton()">what</button>
 
      <!-- import tone.js -->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.68/Tone.js" integrity="sha512-eBjUIAF/NN5kcGlFXz5n9UMAv+LKYFqtGnqHu83qQCXRJaL6iSsjFeOdft9AK9lD/9meTkj/5ctn6DGV5rz6Pg==" crossorigin="anonymous"></script>
+
      <script src="app/sound/keyboard.js"></script>
      <script src="app/sound/mouse.js"></script>
      <script type="module" src="app/sound/tone.js"></script>
