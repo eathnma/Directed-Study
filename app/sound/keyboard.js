@@ -11,9 +11,21 @@ function setMyKeyDownListener() {
 
 // play synth sound
 // Membrane Synth https://tonejs.github.io/docs/r12/MembraneSynth
-const synth = new Tone.MembraneSynth().toMaster();
+// const synth = new Tone.MembraneSynth().toMaster();
+// const player = new Tone.Player("https://tonejs.github.io/audio/berklee/gong_1.mp3").toDestination();
+
+const sampler = new Tone.Sampler({
+	urls: {
+        A1: "A1.mp3",
+		A2: "A2.mp3",
+	},
+	baseUrl: "https://tonejs.github.io/audio/casio/",
+}).toDestination();
+
+const synth = new Tone.Synth().toDestination();
+
 function playSynth() {
-    synth.triggerAttackRelease("C3", "7n");
+    sampler.triggerAttackRelease(["C1", "G1", "Eb1", "Bb1"], 4);
 }
 
 window.addEventListener('click');
