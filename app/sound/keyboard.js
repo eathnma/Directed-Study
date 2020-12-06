@@ -1,10 +1,5 @@
 // https://devriffs.com/simple-tonejs-keyboard/
-
-var CMin7 = ["C5", "G5", "Eb5", "Bb5"];
-var BMaj7 = ["B5", "Gb5", "Eb5", "Bb6"];
-var BbMin7 = ["Bb5", "F5", "Db5", "Ab5"];
-var AMaj7 = ["A5", "E5", "Db5", "Ab6"];
-var CsMin9 = ["Db5", "B5", "Eb5", "Ab6"];
+// https://requirejs.org/
 
 const sampler = new Tone.Sampler({
 	urls: {
@@ -14,6 +9,13 @@ const sampler = new Tone.Sampler({
 	},
 }).toDestination();
 
+var chordPlayed;
+var CMin7 = ["C5", "G5", "Eb5", "Bb5"];
+var BMaj7 = ["B5", "Gb5", "Eb5", "Bb6"];
+var BbMin7 = ["Bb5", "F5", "Db5", "Ab5"];
+var AMaj7 = ["A5", "E5", "Db5", "Ab6"];
+var CsMin9 = ["Db5", "B5", "Eb5", "Ab6"];
+
 function chordRandomizer(){
     // randomize the array
     var chordArray = [CMin7, BMaj7, BbMin7, AMaj7, CsMin9];
@@ -21,20 +23,24 @@ function chordRandomizer(){
     return randomChord;
 }
 
+function buttonPressed(){
+    chordPlayed = chordRandomizer();
+}
+
 // puts listener whenever you press the keyboard
-function onKeyDown(){
+function onKeyDown(chord){
 window.addEventListener("keydown",
     function(event) {
         logKey(event.key);
-        console.log(chordRandomizer());
-        lookForKeys(event, chordRandomizer());
+        console.log(chordPlayed);
+        lookForKeys(event, chordPlayed);
     }
     );
 }
 
-
 function lookForKeys(event, chord){
     if(event.key == 'a'){
+        console.log("trya");
         sampler.triggerAttackRelease(chord[0], 1);
     }
 
