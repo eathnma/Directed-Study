@@ -2,9 +2,9 @@
   "name": "directed-study",
   "version": "1.0.0",
   "description": "A web application that allows co-workers to informally chat",
-  "main": "app/app.js",
+  "main": "app/index.js",
   "scripts": {
-    "start": "node app/app.js",
+    "start": "node app/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
