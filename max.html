@@ -4,30 +4,43 @@
     <title>Keyboard</title>
      <!-- import paper.js-->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.11/paper-full.min.js"></script>
-
+     <!-- import Inter from Google Fonts API-->
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
+     <link rel="stylesheet" href="css/grid.css">
   </head>
 
   <!-- on load, run keystroke listeners -->
-  <body onload="onKeyDown()">
-    <div>
+  <body onload="onKeyDown()" class="container">
+    <header>
+        <P>TRY</P>
+    </header> 
 
-    </div>
+    <article>
+        <div>
+            <p>TRY</p>
+        </div>
 
-    <div>
+        <div>
 
-    </div>
+        </div>
 
-    <div>
+        <div>
 
-    </div>
+        </div>
 
-    <div>
+        <div>
 
-    </div>
+        </div>
 
-    <div>
+        <div>
 
-    </div>
+        </div>
+    </article>  
+
+    <footer>
+        <button onclick="newWindow()">Change Chord!</button>
+    </footer>
+
     <!-- <p id="keyPrint"></p>
 
     <div id="draw-group">
@@ -37,11 +50,6 @@
     <div id="draw-animation">
 
     </div> -->
-
-
-
-    <button onclick="newWindow()">Change Chord!</button>
-
     <!-- import main.js file-->
     <script src="app/main.js"></script>
 

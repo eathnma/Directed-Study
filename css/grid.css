@@ -1,0 +1,25 @@
+header {
+  grid-area: header;
+}
+
+footer {
+  grid-area: footer;
+}
+
+article {
+  grid-area: main;
+}
+
+p {
+  font-family: "Inter", sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 1fr 80vh 1fr;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas:
+    "header header header header header"
+    "main main main main main"
+    "footer footer footer footer footer";
+}
