@@ -1,22 +1,44 @@
+/* css normalize */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  cursor: default;
+  font-family: "Inter", sans-serif;
+}
+
 header {
   grid-area: header;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-items: center;
+  align-items: center;
+  background-color: #f8f8f8;
+  margin: 0;
 }
 
 footer {
   grid-area: footer;
+  background-color: #f8f8f8;
 }
 
 article {
   grid-area: main;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+  align-items: end;
 }
 
-p {
-  font-family: "Inter", sans-serif;
+article > div {
+  margin-bottom: 1em;
 }
 
 .container {
   display: grid;
-  grid-template-rows: 1fr 80vh 1fr;
+  grid-template-rows: 10vh 80vh 10vh;
   grid-template-columns: repeat(5, 1fr);
   grid-template-areas:
     "header header header header header"
