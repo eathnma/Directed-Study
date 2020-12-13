@@ -1,7 +1,10 @@
+export{test};
+
+function test2(){
 // Make an instance of two and place it on the page.
 var elems = document.getElementsByClassName('draw-shapes');
 
-// Tiffany Syntax Wtf
+// Tiffany Syntax WTF
 elems = [...elems].map((elem)=>{
     var params = { width: 50, height: 370 };
     var two = new Two(params).appendTo(elem);
@@ -29,3 +32,8 @@ elems = [...elems].map((elem)=>{
     two.update();
 });
 
+}
+
+function test(){
+    return true;
+}

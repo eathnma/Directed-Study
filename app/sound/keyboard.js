@@ -1,6 +1,8 @@
 // https://devriffs.com/simple-tonejs-keyboard/
 // https://requirejs.org/
 
+import {test} from '/app/visualization/notes.js';
+
 const sampler = new Tone.Sampler({
 	urls: {
         A3: "audio/piano/a3.mp3",
@@ -23,8 +25,10 @@ function chordRandomizer(){
     return randomChord;
 }
 
+// called from HTML
 function buttonPressed(){
     chordPlayed = chordRandomizer();
+    console.log(test());
 }
 
 // puts listener whenever you press the keyboard
