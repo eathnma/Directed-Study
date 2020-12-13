@@ -69,6 +69,6 @@ function logKey (key) {
     // grab content from html
     var keyPrintElement = document.getElementById("keyPrint");
     // append string to the key tab
-    keyPrintElement.insertAdjacentHTML('beforeend',key);
+    // keyPrintElement.insertAdjacentHTML('beforeend',key);
 
 }
