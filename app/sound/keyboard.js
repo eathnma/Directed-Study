@@ -1,6 +1,7 @@
 // https://devriffs.com/simple-tonejs-keyboard/
 // https://requirejs.org/
 
+// test import from other js files
 import {test} from '/app/visualization/notes.js';
 
 const sampler = new Tone.Sampler({
@@ -25,27 +26,37 @@ function chordRandomizer(){
     return randomChord;
 }
 
-// called from HTML
-function buttonPressed(){
+// call button function
+document.getElementById("button").addEventListener("click", function(){
+    
+    // return random array when button is clicked
     chordPlayed = chordRandomizer();
+
+    // calls test function from note js
     console.log(test());
-}
+
+    console.log("button pressed");
+});
 
 // puts listener whenever you press the keyboard
-function onKeyDown(chord){
 window.addEventListener("keydown",
     function(event) {
         logKey(event.key);
+        if(chordPlayed == null){
+            lookForKeys(event, CMin7);
+        } else {
+            lookForKeys(event, chordPlayed);
+        }
+
         console.log(chordPlayed);
-        lookForKeys(event, chordPlayed);
     }
-    );
-}
+);
 
 function lookForKeys(event, chord){
     if(event.key == 'a'){
         console.log("trya");
         sampler.triggerAttackRelease(chord[0], 1);
+        test();
     }
 
     if(event.key == 's'){

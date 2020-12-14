@@ -1,6 +1,21 @@
+
+// each note has certain attributes such as x
+class Note{
+    constructor(x, y, height, speed){
+        this.x = x;
+        this.y = y;
+        this.height = height;
+        this.speed = speed;
+    }
+
+    test(){
+        
+    }
+}
+// allow test to be exported
 export{test};
 
-function test2(){
+function test(){
 // Make an instance of two and place it on the page.
 var elems = document.getElementsByClassName('draw-shapes');
 
@@ -32,8 +47,4 @@ elems = [...elems].map((elem)=>{
     two.update();
 });
 
-}
-
-function test(){
-    return true;
 }
