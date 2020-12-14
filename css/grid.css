@@ -45,3 +45,7 @@ article > div {
     "main main main main main"
     "footer footer footer footer footer";
 }
+
+svg {
+  position: relative;
+}

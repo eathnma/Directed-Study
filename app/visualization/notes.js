@@ -1,50 +1,58 @@
+// test class to be exported
+export{Note};
 
 // each note has certain attributes such as x
 class Note{
-    constructor(x, y, height, speed){
-        this.x = x;
-        this.y = y;
-        this.height = height;
+    constructor(color, speed){
+        this.x = 0;
+        this.y = 0;
+        this.color = color;
         this.speed = speed;
-    }
-
-    test(){
+       
+        // define variable for future use
+        this.two = undefined;
         
     }
-}
-// allow test to be exported
-export{test};
 
-function test(){
-// Make an instance of two and place it on the page.
-var elems = document.getElementsByClassName('draw-shapes');
+    update(){
+        this.setup();
+        this.createShape();
 
-// Tiffany Syntax WTF
-elems = [...elems].map((elem)=>{
-    var params = { width: 50, height: 370 };
-    var two = new Two(params).appendTo(elem);
+        // updates animation
+        this.two.update();
+    }
 
-    // two has convenience methods to create shapes.
-    var rectWidth = 5;
-    var rectHeight = 20;
-    var rect = two.makeRoundedRectangle(20 + rectWidth/2 , 0 + rectHeight /2, rectWidth, rectHeight);
+    setup(){
+        var elem = document.getElementById('draw-shapes');
+        var params = { width: 50, height: 370 };
+        this.two = new Two(params).appendTo(elem);
+    }
 
-    // The object returned has many stylable properties:
+    createShape(){
+        // loop through every instance of draw-shapes
+        // elems = [...elems].map((elem)=>{
 
-    rect.fill = 'rgb(0, 200, 255)';
-    rect.opacity = 0.75;
-    rect.noStroke();
+        // two has methods to create shapes.
+        var rectWidth = 5;
+        var rectHeight = 20;
+        var rect = this.two.makeRoundedRectangle(20 + rectWidth/2 , 0 + rectHeight /2, rectWidth, rectHeight);
 
-    var yPos = 0;
+        // The object returned has many stylable properties:
+        rect.fill = 'rgb(0, 200, 255)';
+        rect.opacity = 0.75;
+        rect.noStroke();
 
-    // make shapes move upwards
-    two.bind('update', function(frameCount) {
-        yPos--;
-        rect.translation.set(two.width / 2, 370 + yPos);
-        }).play();  // Finally, start the animation loop
+        var yPos = 0;
 
-    // update animation
-    two.update();
-});
+        let that = this;
+        // make shapes move upwards
+        this.two.bind('update', function(frameCount) {
+            yPos--;
+            rect.translation.set(that.two.width / 2, 370 + yPos);
+            }).play();  // Finally, start the animation loop
+        
+        // elems = [...elems].map((elem)=>{
+        // });
+    }
 
 }

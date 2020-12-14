@@ -2,7 +2,10 @@
 // https://requirejs.org/
 
 // test import from other js files
-import {test} from '/app/visualization/notes.js';
+import {Note} from '/app/visualization/notes.js';
+
+// create new note object
+const userNote = new Note (0,0);
 
 const sampler = new Tone.Sampler({
 	urls: {
@@ -47,16 +50,17 @@ window.addEventListener("keydown",
         } else {
             lookForKeys(event, chordPlayed);
         }
-
+        
         console.log(chordPlayed);
     }
 );
 
 function lookForKeys(event, chord){
     if(event.key == 'a'){
-        console.log("trya");
         sampler.triggerAttackRelease(chord[0], 1);
-        test();
+
+        // call update function from note class
+        userNote.update();
     }
 
     if(event.key == 's'){
