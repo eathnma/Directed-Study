@@ -2,16 +2,16 @@
 // https://requirejs.org/
 
 // test import from other js files
-import {Note} from '/app/visualization/notes.js';
+import {Note} from '../visualization/notes.js';
 
 // create new note object
 const userNote = new Note (0,0);
 
 const sampler = new Tone.Sampler({
 	urls: {
-        A3: "audio/piano/a3.mp3",
-        A4: "audio/piano/a4.mp3",
-        A5: "audio/piano/a5.mp3",
+        A3: "../assets/audio/piano/a3.mp3",
+        A4: "../assets/audio/piano/a4.mp3",
+        A5: "../assets/audio/piano/a5.mp3",
 	},
 }).toDestination();
 
@@ -35,9 +35,6 @@ document.getElementById("button").addEventListener("click", function(){
     // return random array when button is clicked
     chordPlayed = chordRandomizer();
 
-    // calls test function from note js
-    console.log(test());
-
     console.log("button pressed");
 });
 
@@ -45,6 +42,7 @@ document.getElementById("button").addEventListener("click", function(){
 window.addEventListener("keydown",
     function(event) {
         logKey(event.key);
+
         if(chordPlayed == null){
             lookForKeys(event, CMin7);
         } else {

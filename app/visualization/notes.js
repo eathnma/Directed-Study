@@ -11,11 +11,14 @@ class Note{
        
         // define variable for future use
         this.two = undefined;
-        
     }
 
     update(){
-        this.setup();
+
+        if(typeof this.two === "undefined"){
+            this.setup();
+        }
+        
         this.createShape();
 
         // updates animation
