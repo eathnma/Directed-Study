@@ -7,13 +7,18 @@
   <!-- on load, run keystroke listeners -->
   <body>
 
-    <button id="smallWindow">Change Chord!</button>
+    <button id="smallWindow">To Project!</button>
 
-     <!-- import main.js file-->
-     <!-- <script type="text/javascript" src="../main.js"></script> -->
-     <script type="text/javascript" src="../main.js"></script>
+    <!-- import main.js file-->
+    <script type="text/javascript" src="../main.js"></script>
 
-  
+    <!-- socket.io cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"></script>
+    
+    <script>
+      var socket = io();
+    </script>
+
   </body>
 
 </html>
