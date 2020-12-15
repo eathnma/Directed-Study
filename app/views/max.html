@@ -23,7 +23,7 @@
             <div id="draw-shapes">
 
             </div>
-            <img src="../assets/img/Edith.png" alt="Edith">
+            <img id="clickme" src="../assets/img/Edith.png" alt="Edith">
             <h6 style="text-align: center;">You</h6>
         </div>
 
@@ -73,13 +73,28 @@
     <script type="text/javascript" src="../main.js"></script>
 
      <!-- import tone.js -->
+     <!-- js sound library for loading instruments and such -->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.68/Tone.js" integrity="sha512-eBjUIAF/NN5kcGlFXz5n9UMAv+LKYFqtGnqHu83qQCXRJaL6iSsjFeOdft9AK9lD/9meTkj/5ctn6DGV5rz6Pg==" crossorigin="anonymous"></script>
      <script type="module" src="../sound/keyboard.js"></script>
 
     <!-- import two.min.js -->
+    <!-- drawing out the individual notes for each user -->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/two.js/0.7.0/two.min.js"></script>
      <script type="module" src="../visualization/notes.js"></script>
-     
+
+    <!-- import draggable.js -->
+    <!-- for sound oscillation. When user wiggles an avatar, the sound is manipulated -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/draggable/1.0.0-beta.12/draggable.min.js"></script>
+    <script type="module" src="../sound/mouse.js"></script>
+
+    <!--  import socket.io cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"></script>
+    
+    <script>
+    //   const osc = new Tone.Oscillator(440, "sine").toDestination().start();
+      var socket = io();
+    </script>
+
   </body>
 
 </html>

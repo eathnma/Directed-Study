@@ -1,46 +1,50 @@
-// // All mouse related events go into here.
+// Wiggle Interaction!
+// import {Draggalble} from '@shopify/draggable';
 
-// // 1. Create a window event listener & run function if clicked
-// document.addEventListener("click",function(){
-//     console.log("mouse clicked");
-//     // playSynth();
-// });
+// look at increasing the quality of the sound
+// https://tonejs.github.io/examples/jump
 
-// // PAPER.JS EXAMPLE CHAIN 
-// // The amount of points in the path:
-// var points = 25;
-// // The distance between the points:
-// var length = 35;
+//look at frequency change
+//https://tonejs.github.io/docs/14.7.58/Oscillator.html
+// create a 440hz tone 
+// const osc = new Tone.Oscillator(440, "sine").toDestination().start();
 
-// // create new path
-// var path = new Path({
-// 	strokeColor: '#E4141B',
-// 	strokeWidth: 10,
-// 	strokeCap: 'round'
-// });
+// detects hit detection for elements within 'clickme'.
+// currently only prints when mouse is clicked
+document.getElementById('clickme').onclick = function clickEvent(e) {
+    // e = Mouse click event.
+    var rect = e.target.getBoundingClientRect();
+    var mousex = e.clientX - rect.left; //x position within the element.
+    var mousey = e.clientY - rect.top;  //y position within the element.
+    console.log("Left? : " + mousex + " ; Top? : " + mousey + ".");
+}
 
-// var start = view.center / [10, 1];
-// for (var i = 0; i < points; i++)
-// 	path.add(start + new Point(i * length, 0));
+var mouseIsDown = false;
 
-// function onMouseMove(event) {
-// 	path.firstSegment.point = event.point;
-// 	for (var i = 0; i < points - 1; i++) {
-// 		var segment = path.segments[i];
-// 		var nextSegment = segment.next;
-// 		var vector = segment.point - nextSegment.point;
-// 		vector.length = length;
-// 		nextSegment.point = segment.point - vector;
-// 	}
-// 	path.smooth({ type: 'continuous' });
-// }
+document.getElementById('clickme').addEventListener('mousedown', function clickEvent(e) {
+  mouseIsDown = true;
 
-// function onMouseDown(event) {
-// 	path.fullySelected = true;
-// 	path.strokeColor = '#e08285';
-// }
+  var rect = e.target.getBoundingClientRect();
+  var mousex = e.clientX - rect.left; //x position within the element.
+  var mousey = e.clientY - rect.top;  //y position within the element.
+  console.log("Left? : " + mousex + " ; Top? : " + mousey + ".");
 
-// function onMouseUp(event) {
-// 	path.fullySelected = false;
-// 	path.strokeColor = '#e4141b';
-// }
+  setTimeout(function() {
+    if(mouseIsDown) {
+      console.log("long press");
+      
+      var mousexMapped = mousex * 21;
+
+      const osc = new Tone.Oscillator({
+          type: "sine",
+          frequency: mousexMapped,
+          volume: -16
+      }).toDestination().start();
+
+    }
+  }, 100);
+});
+
+window.addEventListener('mouseup', function() {
+  mouseIsDown = false;
+});
