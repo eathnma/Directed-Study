@@ -1,12 +1,12 @@
 const path = require('path');
 const port = 2000;
 
-var app = require('express')();
-var express = require('express');
+const app = require('express')();
+const express = require('express');
 
 // socket.io code
-var http = require('http').createServer(app);
-var io = require('socket.io')(http);
+const http = require('http').createServer(app);
+const io = require('socket.io')(http);
 
 app.use(express.static("app"));
 app.set('views', path.join(__dirname, '/views'));
@@ -16,13 +16,36 @@ app.get('/', (req, res) => {
   res.sendFile('/views/index.html',{ root: __dirname });
 })
 
+function onConnection(socket){
+  socket.on('drawing', (data) => socket.broadcast.emit('drawing', data));
+}
+
+let numUsers = 0;
+
 // create connection and return if user joins
 io.on('connection', (socket) => {
-  console.log('a user connected');
-  socket.on('disconnect', () => {
-    console.log('user disconnected');
+
+  // let addedUser = false;
+  socket.on('new message',(data) => {
+      socket.broadcast.emit('new message', {
+        username: socket.username,
+        message: data
+      });
   });
+
+  socket.on('',() => {
+    
+
+  });
+
+    console.log('a user connected');
+    socket.on('disconnect', () => {
+      console.log('user disconnected');
+    });
+
 });
+
+
 
 // process.env.PORT for heroku deployment
 http.listen(process.env.PORT || port, () => {

@@ -1,0 +1,35 @@
+/* load castledown */
+@font-face {
+  font-family: Castledown;
+  src: url(../assets/font/Castledown.ttf);
+}
+
+body {
+  background-color: #fafdf7;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+img {
+  margin-bottom: 3em;
+}
+
+button {
+  font-family: Castledown;
+  background-color: #fafdf7;
+  font-size: 1em;
+  border-radius: 1em;
+  padding: 0.2em 1em;
+}
+
+/* click the button */
+button:active {
+  background-color: #000;
+  color: white;
+}

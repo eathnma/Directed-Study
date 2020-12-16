@@ -1,5 +1,4 @@
-// https://devriffs.com/simple-tonejs-keyboard/
-// https://requirejs.org/
+'use strict';
 
 // test import from other js files
 import {Note} from '../visualization/notes.js';
@@ -17,10 +16,10 @@ const sampler = new Tone.Sampler({
 
 var chordPlayed;
 var CMin7 = ["C5", "G5", "Eb5", "Bb5"];
-var BMaj7 = ["B5", "Gb5", "Eb5", "Bb6"];
+var BMaj7 = ["B5", "Gb5", "Eb5", "Bb5"];
 var BbMin7 = ["Bb5", "F5", "Db5", "Ab5"];
-var AMaj7 = ["A5", "E5", "Db5", "Ab6"];
-var CsMin9 = ["Db5", "B5", "Eb5", "Ab6"];
+var AMaj7 = ["A5", "E5", "Db5", "Ab5"];
+var CsMin9 = ["Db5", "B5", "Eb5", "Ab5"];
 
 function chordRandomizer(){
     // randomize the array
@@ -56,7 +55,6 @@ window.addEventListener("keydown",
 function lookForKeys(event, chord){
     if(event.key == 'a'){
         sampler.triggerAttackRelease(chord[0], 1);
-
         // call update function from note class
         userNote.update();
     }
