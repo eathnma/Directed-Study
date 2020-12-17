@@ -14,7 +14,7 @@
     <header>
         <P></P>
         <h4>Frank's Team</h4>
-        <P></P>
+        <button id="button"> change chord</button>
     </header> 
 
     <article>
@@ -51,12 +51,19 @@
         </div>
 
         <div>
-            <P>TRY</P>
+            <div class="draw-shapes">
+
+            </div>
+            <img src="../assets/img/Paul.png" alt="Paul">
+            <h6 style="text-align: center;">Paul</h6>
         </div>
     </article>  
 
     <footer>
-        <button id="button">Change Chord!</button>
+        <div id="volume-container">
+            <img id="volume-img" src="../assets/img/Volume.png" alt="no-volume">
+            <input type="range" id="volume" name="volume" min="0" max="10"> 
+        </div>
     </footer>
 
     <!-- <p id="keyPrint"></p>
@@ -83,15 +90,12 @@
 
     <!-- import draggable.js -->
     <!-- for sound oscillation. When user wiggles an avatar, the sound is manipulated -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/draggable/1.0.0-beta.12/draggable.min.js"></script>
-    <script type="module" src="../sound/mouse.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/draggable/1.0.0-beta.12/draggable.min.js"></script>
+    <script type="module" src="../sound/mouse.js"></script> -->
 
     <!--  import socket.io cdn -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"></script>
-    
-    <script>
-      var socket = io();
-    </script>
+    <script type="module" src="../server.js"></script>
 
   </body>
 

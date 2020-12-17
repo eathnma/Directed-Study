@@ -49,3 +49,14 @@ article > div {
 svg {
   position: relative;
 }
+
+#volume-container {
+  display: flex;
+  margin: 1em 0em;
+}
+
+#volume-img {
+  margin: 0em 0.5em;
+  width: 1.3em;
+  height: auto;
+}

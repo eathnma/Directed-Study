@@ -5,5 +5,8 @@ var usernameInput = document.getElementById('username');
 
 var socket = io();
 
+socket.on('message', message => {
+    console.log(message);
+});
 
 

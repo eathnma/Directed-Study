@@ -4,6 +4,13 @@
   src: url(../assets/font/Castledown.ttf);
 }
 
+/* load plantin std */
+
+@font-face {
+  font-family: Plantin;
+  src: url(../assets/font/PlantinStd-Light.otf);
+}
+
 body {
   background-color: #fafdf7;
 }
@@ -13,11 +20,12 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 93vh;
 }
 
 img {
-  margin-bottom: 3em;
+  margin-top: 5em;
+  margin-bottom: 2em;
 }
 
 button {
@@ -32,4 +40,23 @@ button {
 button:active {
   background-color: #000;
   color: white;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0em 1em;
+}
+
+p {
+  font-family: Castledown;
+  color: #4c5357;
+}
+
+a {
+  font-family: Castledown;
+  text-decoration: none;
+  text-decoration: underline;
+  color: #4c5357;
 }

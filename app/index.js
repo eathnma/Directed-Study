@@ -33,6 +33,8 @@ io.on('connection', (socket) => {
       });
   });
 
+  socket.emit('message', 'Welcome to the Room!');
+
   socket.on('',() => {
     
 
