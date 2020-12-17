@@ -33,7 +33,19 @@ io.on('connection', (socket) => {
       });
   });
 
+  // Welcome Current User
   socket.emit('message', 'Welcome to the Room!');
+
+  // Broadcast when a user connects
+  socket.broadcast.emit('message', 'A user has joined the chat');
+
+  // Runs when client disconnects
+  socket.on('disconnect', () => {
+    io.emit('message', 'A user has left the chat');
+  });
+    
+  // // Broadcast to everybody
+  // io.emit();
 
   socket.on('',() => {
     
