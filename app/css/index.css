@@ -13,10 +13,11 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 93vh;
 }
 
 img {
+  margin-top: 4em;
   margin-bottom: 3em;
 }
 
@@ -32,4 +33,23 @@ button {
 button:active {
   background-color: #000;
   color: white;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0em 1em;
+}
+
+p {
+  font-family: Castledown;
+  color: #4c5357;
+}
+
+a {
+  font-family: Castledown;
+  text-decoration: none;
+  text-decoration: underline;
+  color: #4c5357;
 }
