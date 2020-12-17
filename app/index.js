@@ -19,13 +19,7 @@ app.get('/', (req, res) => {
 var userArray = [];
 
 // create connection and return if user joins
-io.on('connection', (socket) => {
-
-  // Welcome Current User
-  // socket.emit('message', 'Welcome to the Room!');
-
-  // Broadcast when a user connects
-  // socket.broadcast.emit('message', 'A user has joined the chat');
+io.on('connection', function(socket) {
 
   // Runs when client disconnects
   socket.on('disconnect', () => {
@@ -40,14 +34,9 @@ io.on('connection', (socket) => {
 
   socket.on('person', (person) =>{
     userArray.push(person);
-    
     io.emit('personOutput', userArray);
   })
-    
-  // // Broadcast to everybody
-  // io.emit();
-
-
+  
     console.log('a user connected');
 
     socket.on('disconnect', () => {
