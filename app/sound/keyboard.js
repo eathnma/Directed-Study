@@ -4,7 +4,11 @@
 import {Note} from '../visualization/notes.js';
 
 // create new note object
-const userNote = new Note (0,0);
+const userNote1 = new Note ('#6FCF97',"user1");
+const userNote2 = new Note ('#FF8470',"user2");
+const userNote3 = new Note ('#FFBA00',"user3");
+const userNote4 = new Note ('#3780F8',"user4");
+const userNote5 = new Note ('#BB6BD9',"user5");
 
 const sampler = new Tone.Sampler({
 	urls: {
@@ -25,17 +29,11 @@ function chordRandomizer(){
     // randomize the array
     var chordArray = [CMin7, BMaj7, BbMin7, AMaj7, CsMin9];
     const randomChord = chordArray[Math.floor(Math.random() * chordArray.length)];
-    return randomChord;
+    setTimeout(chordRandomizer, 5000);
+    chordPlayed = randomChord;
 }
 
-// call button function
-document.getElementById("button").addEventListener("click", function(){
-    
-    // return random array when button is clicked
-    chordPlayed = chordRandomizer();
-
-    console.log("button pressed");
-});
+chordRandomizer();
 
 // puts listener whenever you press the keyboard
 window.addEventListener("keydown",
@@ -43,12 +41,10 @@ window.addEventListener("keydown",
         logKey(event.key);
 
         if(chordPlayed == null){
-            lookForKeys(event, CMin7);
+            lookForKeys(event, chordPlayed);
         } else {
             lookForKeys(event, chordPlayed);
         }
-        
-        console.log(chordPlayed);
     }
 );
 
@@ -56,19 +52,22 @@ function lookForKeys(event, chord){
     if(event.key == 'a'){
         sampler.triggerAttackRelease(chord[0], 1);
         // call update function from note class
-        userNote.update();
+        userNote1.update();
     }
 
     if(event.key == 's'){
         sampler.triggerAttackRelease(chord[1], 1);
+        userNote2.update();
     }
 
     if(event.key == 'd'){
         sampler.triggerAttackRelease(chord[2], 1);
+        userNote3.update();
     }
     
     if(event.key == 'f'){
         sampler.triggerAttackRelease(chord[3], 1);
+        userNote4.update();
     }
     
     // if(event.key == 'g'){

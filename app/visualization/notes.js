@@ -3,12 +3,9 @@ export{Note};
 
 // each note has certain attributes such as x
 class Note{
-    constructor(color, speed){
-        this.x = 0;
-        this.y = 0;
+    constructor(color, id){
         this.color = color;
-        this.speed = speed;
-       
+        this.id = id;
         // define variable for future use
         this.two = undefined;
     }
@@ -17,8 +14,7 @@ class Note{
 
         if(typeof this.two === "undefined"){
             this.setup();
-        }
-        
+        }   
         this.createShape();
 
         // updates animation
@@ -26,7 +22,7 @@ class Note{
     }
 
     setup(){
-        var elem = document.getElementById('draw-shapes');
+        var elem = document.getElementById(this.id);
         var params = { width: 50, height: 370 };
         this.two = new Two(params).appendTo(elem);
     }
@@ -41,7 +37,7 @@ class Note{
         var rect = this.two.makeRoundedRectangle(20 + rectWidth/2 , 0 + rectHeight /2, rectWidth, rectHeight);
 
         // The object returned has many stylable properties:
-        rect.fill = 'rgb(0, 200, 255)';
+        rect.fill = this.color;
         rect.opacity = 0.75;
         rect.noStroke();
 

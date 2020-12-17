@@ -9,6 +9,16 @@
   font-family: "Inter", sans-serif;
 }
 
+img {
+  width: 3em;
+  height: auto;
+}
+
+#zzz {
+  width: 1em;
+  height: auto;
+}
+
 header {
   grid-area: header;
   display: grid;
@@ -34,6 +44,8 @@ article {
 
 article > div {
   margin-bottom: 1em;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .container {
