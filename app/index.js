@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
   res.sendFile('/views/index.html',{ root: __dirname });
 })
 
-let numUsers = 0;
+var userArray = [];
 
 // create connection and return if user joins
 io.on('connection', (socket) => {
@@ -37,14 +37,22 @@ io.on('connection', (socket) => {
     io.emit('usermessage', usernameInput);
     console.log(usernameInput);
   });
+
+  socket.on('person', (person) =>{
+    userArray.push(person);
+    
+    io.emit('personOutput', userArray);
+  })
     
   // // Broadcast to everybody
   // io.emit();
 
 
     console.log('a user connected');
+
     socket.on('disconnect', () => {
       console.log('user disconnected');
+      io.emit('removePerson', userArray.pop())
     });
 
 });

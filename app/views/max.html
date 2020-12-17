@@ -16,46 +16,8 @@
         <h5 id="displayUsername"></h5>
     </header> 
 
-    <article>
-        <div>
-            <div id="draw-shapes">
-
-            </div>
-            <img id="clickme" src="../assets/img/Edith.png" alt="Edith">
-            <h6 style="text-align: center;">You</h6>
-        </div>
-
-        <div>
-            <div class="draw-shapes">
-
-            </div>
-            <img src="../assets/img/Frank.png" alt="Frank">
-            <h6 style="text-align: center;">Frank</h6>
-        </div>
-
-        <div>
-            <div class="draw-shapes">
-
-            </div>
-            <img src="../assets/img/Hason.png" alt="Hason">
-            <h6 style="text-align: center;">Hason</h6>
-        </div>
-
-        <div>
-            <div class="draw-shapes">
-
-            </div>
-            <img src="../assets/img/Jennifer.png" alt="Jennifer">
-            <h6 style="text-align: center;">Jennifer</h6>
-        </div>
-
-        <div>
-            <div class="draw-shapes">
-
-            </div>
-            <img src="../assets/img/Paul.png" alt="Paul">
-            <h6 style="text-align: center;">Paul</h6>
-        </div>
+    <article id="user-list">
+        <!-- dynamically created content -->
     </article>  
 
     <footer>
@@ -80,13 +42,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"></script>
     <script type="module" src="../main.js"></script>
 
+    <!-- import person -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.68/Tone.js" integrity="sha512-eBjUIAF/NN5kcGlFXz5n9UMAv+LKYFqtGnqHu83qQCXRJaL6iSsjFeOdft9AK9lD/9meTkj/5ctn6DGV5rz6Pg==" crossorigin="anonymous"></script>
+    <script type="module" src="../personFolder/person.js"></script>
+
     <!-- import workapp -->
     <script type="module" src="../workapp.js"></script>
    
      <!-- import tone.js -->
      <!-- js sound library for loading instruments and such -->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.68/Tone.js" integrity="sha512-eBjUIAF/NN5kcGlFXz5n9UMAv+LKYFqtGnqHu83qQCXRJaL6iSsjFeOdft9AK9lD/9meTkj/5ctn6DGV5rz6Pg==" crossorigin="anonymous"></script>
-     <script type="module" src="../sound/keyboard.js"></script>
+     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.68/Tone.js" integrity="sha512-eBjUIAF/NN5kcGlFXz5n9UMAv+LKYFqtGnqHu83qQCXRJaL6iSsjFeOdft9AK9lD/9meTkj/5ctn6DGV5rz6Pg==" crossorigin="anonymous"></script> -->
+     <!-- <script type="module" src="../sound/keyboard.js"></script> -->
 
     <!-- import two.min.js -->
     <!-- drawing out the individual notes for each user -->

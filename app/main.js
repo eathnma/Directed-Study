@@ -1,16 +1,8 @@
-
-// create new window onclick 
-if(document.getElementById("smallWindow")){
-  document.getElementById("smallWindow").addEventListener("click", function(){
-    var newWin = window.open('/views/max.html', 'example', 'width=350,height=562');
-    
-    console.log("button pressed");
-  });
-}
+console.log("main.js loaded");
+import {Person} from '/personFolder/person.js';
 
 // initalize variables to pass in to server
-var window = window;
-var usernameInput = document.getElementById('username');
+var usernameInput;
 
 var userForm = document.getElementById('user-form');
 
@@ -22,10 +14,13 @@ if(userForm){
   userForm.addEventListener('submit', (event) => {
       event.preventDefault();
       
-      var usernameInput = document.getElementById('username').value;
+      // grab their username
+      usernameInput = document.getElementById('username').value;
+      const person = new Person(usernameInput)
 
       // emitting username to server
       socket.emit('chatMessage', usernameInput);
+      socket.emit('person', person);
   });
 }
 
@@ -35,6 +30,23 @@ socket.on('usermessage', username => {
   localStorage.setItem("username", username);
 
   showUsername(username);
+});
+
+socket.on('personOutput', userArray => {
+  console.log(userArray);
+  userArray.map(person => {
+    const newPerson = new Person(person.username, person.image, person.color);
+    console.log(usernameInput, person.username);
+    if(usernameInput === person.username){
+      newPerson.update();
+    }else{
+      newPerson.setup();
+    }
+  });
+});
+
+socket.on('removePerson', person =>{
+  document.getElementById(person.username).remove();
 });
 
 function showUsername(username){
