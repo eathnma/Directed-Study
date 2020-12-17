@@ -39,5 +39,5 @@ socket.on('usermessage', username => {
 
 function showUsername(username){
   console.log(username);
-  document.getElementById("displayUsername").innerHTML = username;
+  document.getElementById("displayUsername").innerHTML = username + ' has joined the room';
 }
