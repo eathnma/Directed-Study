@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <title>Keyboard</title>
     <link type="text/css" rel="stylesheet" href="../css/normalize.css">
@@ -12,10 +12,13 @@
   <div id="container">
     <img src="../assets/img/title.png" alt="no title slide">
 
-  <form >
-    <button id="smallWindow">LET'S GO!</button>
+    <!-- <button id="smallWindow">LET'S GO!</button> -->
+  <form id="user-form" method="GET">
+    <label for="username">Enter your name here</label>
+    <input type="text" name="username" id="username">
+    <input type= "submit" id="smallWindow" value="SUBMIT!">
   </form>
-    <!-- <input type="text" name="username" id="username"> -->
+
     <!-- <p>probably should have some type of instructionss here</p> -->
   </div>
 
@@ -24,7 +27,8 @@
     <a href="https://github.com/eathnma/Directed-Study">GITHUB</a>
   </footer>
     <!-- import main.js file-->
-    <script type="text/javascript" src="../main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"></script>
+    <script src="../main.js"></script>
 
   </body>
 

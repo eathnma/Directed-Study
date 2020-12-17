@@ -11,12 +11,13 @@
 
 header {
   grid-area: header;
-  display: grid;
-  grid-template-columns: auto auto auto;
+  display: flex;
+  flex-direction: column;
   justify-items: center;
   align-items: center;
   background-color: #f8f8f8;
   margin: 0;
+  padding-top: 1em;
 }
 
 footer {

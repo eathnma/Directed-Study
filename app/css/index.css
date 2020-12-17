@@ -28,7 +28,7 @@ img {
   margin-bottom: 2em;
 }
 
-button {
+input[type="submit"] {
   font-family: Castledown;
   background-color: #fafdf7;
   font-size: 1em;
